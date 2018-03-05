@@ -28,7 +28,7 @@ public class DDRobot extends Robot {
 		while (true) {
 			
 			ahead(100);
-			turnright(90);
+			turnRight(90);
 			ahead(100);
 			for (int i = 0; i < 30; i++) {
 				turnGunLeft(gunIncrement);
