@@ -42,15 +42,15 @@ public class DDRobot extends Robot {
 	 */
 	public void onScannedRobot(ScannedRobotEvent e) {
 	
+		 
+//kind of stole my idea of an altering firing system, but the devs did it better
+// smartfire system cc dev.
 		if (stopWhenSeeRobot) {
-			// Stop everything!  You can safely call stop multiple times.
+			
 			smartFire(e.getDistance());
-			// Look for another robot.
-			// NOTE:  If you call scan() inside onScannedRobot, and it sees a robot,
-			// the game will interrupt the event handler and start it over
+			
 			scan();
-			// We won't get here if we saw another robot.
-			// Okay, we didn't see another robot... start moving or turning again.
+			
 			resume();
 		} else {
 			smartFire(e.getDistance());
