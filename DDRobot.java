@@ -20,17 +20,16 @@ public class DDRobot extends Robot {
 		setBulletColor(Color.green);
 		setScanColor(Color.green);
 
-		// Save # of other bots
-		others = getOthers();
-
-		// Move to a corner
-		goCorner();
 
 		// Initialize gun turn speed to 3
 		int gunIncrement = 3;
 
 		// Spin gun back and forth
 		while (true) {
+			
+			ahead(100);
+			turnright(90);
+			ahead(100);
 			for (int i = 0; i < 30; i++) {
 				turnGunLeft(gunIncrement);
 			}
@@ -38,27 +37,7 @@ public class DDRobot extends Robot {
 		}
 	}
 
-	/**
-	 * goCorner:  A very inefficient way to get to a corner.  Can you do better?
-	 */
-	public void goCorner() {
-		// We don't want to stop when we're just turning...
-		stopWhenSeeRobot = false;
-		// turn to face the wall to the "right" of our desired corner.
-		turnRight(normalRelativeAngleDegrees(corner - getHeading()));
-		// Ok, now we don't want to crash into any robot in our way...
-		stopWhenSeeRobot = true;
-		
-		ahead(5000);
-	
-		turnLeft(90);
-		// Move to the corner
-		ahead(5000);
-		// Turn gun to starting point
-		turnGunLeft(90);
-	}
 
-	/**
 
 	 */
 	public void onScannedRobot(ScannedRobotEvent e) {
@@ -77,6 +56,7 @@ public class DDRobot extends Robot {
 			smartFire(e.getDistance());
 		}
 	}
+	
 
 
 	public void smartFire(double robotDistance) {
@@ -87,5 +67,6 @@ public class DDRobot extends Robot {
 		} else {
 			fire(3);
 		}
+	}
 	}
 
