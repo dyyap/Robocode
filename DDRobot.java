@@ -21,23 +21,16 @@ public class DDRobot extends Robot {
 		setScanColor(Color.green);
 
 
-		// Initialize gun turn speed to 3
-		int gunIncrement = 3;
 
 		// Spin gun back and forth
 		while (true) {
 			
-			ahead(100);
+			ahead(1000);
+			turnGunRight(180);
 			turnRight(90);
-			ahead(100);
-			for (int i = 0; i < 30; i++) {
-				turnGunLeft(gunIncrement);
-			}
-			gunIncrement *= -1;
-		}
-	}
-
-
+			
+			ahead(1000);
+			turnGunRight(180);
 
 	 
 	public void onScannedRobot(ScannedRobotEvent e) {
