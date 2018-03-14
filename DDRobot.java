@@ -8,10 +8,7 @@ import java.awt.*;
 
 public class DDRobot extends Robot {
 
-	static int corner = 0; // Which corner we are currently using
-	// static so that it keeps it between rounds.
-	boolean stopWhenSeeRobot = false; // See goCorner()
-
+	
 
 	public void run() {
 		// Set colors
